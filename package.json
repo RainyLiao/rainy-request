@@ -1,0 +1,60 @@
+{
+  "name": "@rainy/request",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.12.0",
+  "description": "",
+  "author": "RainyLiao <liaowenrun@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/RainyLiao/rainy-request#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RainyLiao/rainy-request.git"
+  },
+  "bugs": "https://github.com/RainyLiao/rainy-request/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "0.34.1",
+    "@types/node": "18.11.18",
+    "bumpp": "8.2.1",
+    "eslint": "8.31.0",
+    "esno": "0.16.3",
+    "rimraf": "4.0.4",
+    "typescript": "4.9.4",
+    "unbuild": "1.1.1",
+    "vite": "4.0.4",
+    "vitest": "0.27.1"
+  }
+}
